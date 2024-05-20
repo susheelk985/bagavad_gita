@@ -50,17 +50,22 @@
 							<div class="mu-book-overview-content">
 								<div class="row">
 
-									<!-- Book Overview Single Content -->
+                                @foreach ( $chapters as $chapter )
+
+                                    <!-- Book Overview Single Content -->
 									<div class="col-md-3 col-sm-6">
 										<div class="mu-book-overview-single">
 											<span class="mu-book-overview-icon-box">
-												1
+                                                Chapter {{ $chapter->chapter_number }}
 											</span>
-											<h4>Chapter One</h4>
-											<p>example text</p>
+											<h6>{{ $chapter->translation }}</h6>
+											<p>Verses {{ $chapter->verses_count }}</p>
 										</div>
 									</div>
 									<!-- / Book Overview Single Content -->
+
+                                @endforeach
+
 
 
 								</div>
