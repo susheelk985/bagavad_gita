@@ -61,10 +61,20 @@
 				    <!-- Collect the nav links, forms, and other content for toggling -->
 				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				      	<ul class="nav navbar-nav mu-menu navbar-right">
-					        <li><a href="#">HOME</a></li>
-					        <li><a href="#mu-book-overview">OVERVIEW</a></li>
-				            <li><a href="#mu-pricing">DONATE</a></li>
+					        <li><a href="#">{{ _lang('Home') }}</a></li>
+					        <li><a href="#mu-book-overview">{{ _lang('OVERVIEW') }}</a></li>
+				            <li><a href="#mu-pricing">{{ _lang('DONATE') }}</a></li>
 				            {{-- <li><a href="#mu-contact">CONTACT</a></li> --}}
+
+                                <li>Select Language: </li>
+
+                            <div class="col-md-4">
+                                <select class="form-select changeLang">
+                                    <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
+                                    <option value="hi" {{ session()->get('locale') == 'hi' ? 'selected' : '' }}>Hindi</option>
+                                    <option value="ml" {{ session()->get('locale') == 'ml' ? 'selected' : '' }}>Malayalam</option>
+                                </select>
+                            </div>
 				      	</ul>
 				    </div><!-- /.navbar-collapse -->
 			  	</div><!-- /.container-fluid -->
@@ -85,7 +95,7 @@
 					<a href="https://github.com/susheelk985"><i class="fa fa-github"></i></a>
 					<a href="mailto:susheelk985@gmail.com"><i class="fa fa-envelope"></i></a>
 				</div>
-				<p class="mu-copyright">&copy; Copyright <a rel="nofollow" href="https://github.com/susheelk985">susheelk985</a>. All right reserved.</p>
+				<p class="mu-copyright">&copy; {{ _lang('Copyright') }} <a rel="nofollow" href="https://github.com/susheelk985">susheelk985</a>. {{ _lang('All right reserved.') }}</p>
 			</div>
 		</div>
 
@@ -108,6 +118,15 @@
 
     <!-- Custom js -->
 	<script type="text/javascript" src="{{ URL::asset('storage/js/custom.js'); }}"></script>
+    <script type="text/javascript">
+
+        var url = "{{ route('change_language') }}";
+
+        $(".changeLang").change(function(){
+            window.location.href = url + "?lang="+ $(this).val();
+        });
+
+    </script>
     @yield('java_script')
 </body>
 </html>

@@ -9,7 +9,8 @@
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
         "laravel/ui": "^4.5",
-        "rmunate/spell-number": "^1.0"
+        "rmunate/spell-number": "^1.0",
+        "stichoza/google-translate-php": "^5.1"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -25,8 +26,12 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "app/Helpers/helpers.php"
+        ]
     },
+
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
@@ -65,4 +70,5 @@
     },
     "minimum-stability": "stable",
     "prefer-stable": true
+
 }
