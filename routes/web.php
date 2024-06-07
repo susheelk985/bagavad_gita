@@ -14,5 +14,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 /*******Bagavad Gita***********/
 
 Route::get('/',[BagavadGitaController::class,'home']);
+Route::get('chapter/{id}',[BagavadGitaController::class,'chapter'])->name('chapter');
+Route::get('chapter/{ch}/sloks',[BagavadGitaController::class,'sloks'])->name('sloks');
 
 /*******End Bagavad Gita***********/

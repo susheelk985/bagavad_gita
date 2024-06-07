@@ -31,6 +31,11 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800" rel="stylesheet">
     <!-- Lato for Title -->
   	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <style>
+        body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    </style>
 
 </head>
 
@@ -64,6 +69,7 @@
 					        <li><a href="#">HOME</a></li>
 					        <li><a href="#mu-book-overview">OVERVIEW</a></li>
 				            <li><a href="#mu-pricing">DONATE</a></li>
+                            <div id="google_translate_element"></div>
 				            {{-- <li><a href="#mu-contact">CONTACT</a></li> --}}
 				      	</ul>
 				    </div><!-- /.navbar-collapse -->
@@ -108,6 +114,14 @@
 
     <!-- Custom js -->
 	<script type="text/javascript" src="{{ URL::asset('storage/js/custom.js'); }}"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+        </script>
+
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
     @yield('java_script')
 </body>
 </html>

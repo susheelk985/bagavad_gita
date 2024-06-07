@@ -50,26 +50,24 @@
 							<div class="mu-book-overview-content">
 								<div class="row">
 
-                                @foreach ( $chapters as $chapter )
 
                                     <!-- Book Overview Single Content -->
-									<div class="col-md-6 col-sm-6">
-                                        <a href="{{ route('chapter',$chapter->chapter_number) }}">
+									<div class="col-md-12 col-sm-6">
+                                        <a href="{{ route('sloks',$chapter->chapter_number) }}">
 										<div class="mu-book-overview-single" style="background-color:slategrey;color:white">
 
-                                                <span class="mu-book-overview-icon-box">
-                                                    Chapter {{ $chapter->chapter_number }}
-                                                </span>
-                                                <h6>{{ $chapter->translation }}</h6>
-                                                <p>Verses {{ $chapter->verses_count }}</p>
+											<span class="mu-book-overview-icon-box">
+                                                Chapter {{ $chapter->chapter_number }}
+											</span>
+											<h3>{{ $chapter->translation }}</h3>
+											<p>Verses: {{ $chapter->verses_count }}</p>
+                                            <h6>Summary</h6>
+                                            <p>{{ $chapter->summary->en }}</p>
 
 										</div>
-                                        </a>
+                                    </a>
 									</div>
 									<!-- / Book Overview Single Content -->
-
-                                @endforeach
-
 
 
 								</div>
