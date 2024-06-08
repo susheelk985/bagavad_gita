@@ -61,4 +61,9 @@ class BagavadGitaController extends Controller
 
     }
 
+    public function donate()
+    {
+        return view('gita.donate');
+    }
+
 }
