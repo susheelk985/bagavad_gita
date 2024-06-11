@@ -86,6 +86,36 @@
         .next {
             right: 3%;
         }
+        /* public/css/app.css */
+.logo-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.logo {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .logo {
+        max-width: 150px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .logo {
+        max-width: 120px;
+    }
+}
+
+/* set width of logo as the minimum of 200px & 50vw */
+.logo-img {
+	width: min(50vw, 200px);
+}
+
     </style>
 
 </head>

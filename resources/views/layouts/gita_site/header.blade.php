@@ -2,9 +2,8 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
             <!-- Image Logo -->
-            <a class="navbar-brand" href=""><img src="{{ url('storage/images/logo.png') }}" height="50px"
-                    width="50px"></a>
-            <p style="color: white">{{ config('app.name', 'Laravel') }}</p>
+            <a class="navbar-brand" style="padding-left: 120px" href=""><img src="{{ url('storage/images/logo.png') }}" style="width:50px;"></a>
+            <p style="color: white; ">{{ config('app.name', 'Laravel') }}</p>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
             aria-controls="offcanvasDarkNavbar">
@@ -13,7 +12,7 @@
         <div class="offcanvas offcanvas-end text-bg-primary" tabindex="-1" id="offcanvasDarkNavbar"
             aria-labelledby="offcanvasDarkNavbarLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">{{ config('app.name', 'Laravel') }}</h5>
+                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><a class="navbar-brand" style="padding-left: 120px" href=""><img src="{{ url('storage/images/logo.png') }}" style="width:50px;"></a>{{ config('app.name', 'Laravel') }}</h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                     aria-label="Close"></button>
             </div>
