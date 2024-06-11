@@ -20,7 +20,7 @@
 
                                     <!-- Book Overview Single Content -->
 									<div class="col-md-12 col-sm-6">
-                                        <a href="{{ route('sloks',$chapter->chapter_number) }}">
+                                        <a href="{{ route('sloks',['ch'=>$chapter->chapter_number,'sl'=>1]) }}">
 										<div class="mu-book-overview-single" style="background-color:slategrey;color:white">
 
 											<span class="mu-book-overview-icon-box">

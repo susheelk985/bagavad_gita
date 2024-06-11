@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -43,6 +45,47 @@
         iframe.skiptranslate {
             visibility: hidden !important;
         }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* height: 100vh; */
+            margin: 0;
+            position: relative;
+            background-color: #f0f0f0; /* Background color for visibility */
+        }
+
+        .arrow {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            height: 40px;
+            width: 40px;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ccc;
+            background-color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: brightness 0.3s;
+        }
+
+        .arrow:hover {
+            filter: brightness(90%);
+        }
+
+        .arrow svg {
+            fill: currentColor;
+        }
+
+        .previous {
+            left: 3%;
+        }
+
+        .next {
+            right: 3%;
+        }
     </style>
 
 </head>
@@ -53,9 +96,10 @@
 
     <main class="py-4">
         @yield('content')
+        @include('layouts.gita_site.footer')
     </main>
 
-    @include('layouts.gita_site.footer')
+
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -77,6 +121,16 @@
             new google.translate.TranslateElement({
                 pageLanguage: 'en'
             }, 'google_translate_element');
+
+            // to remove poverded by google text and link
+            var $googleDiv = $("#google_translate_element .skiptranslate");
+            var $googleDivChild = $("#google_translate_element .skiptranslate div");
+            $googleDivChild.next().remove();
+
+            $googleDiv.contents().filter(function() {
+                return this.nodeType === 3 && $.trim(this.nodeValue) !== '';
+            }).remove();
+
         }
 
         $(document).ready(function() {
@@ -87,9 +141,11 @@
         function translationTooltipsDisable() {
             //Override google's functions
             _tipon = function() {
-                /*Don't display the tooltip*/ };
+                /*Don't display the tooltip*/
+            };
             _tipoff = function() {
-                /*Don't hide the tooltip*/ };
+                /*Don't hide the tooltip*/
+            };
         }
     </script>
 
