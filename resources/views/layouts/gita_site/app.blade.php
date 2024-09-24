@@ -161,6 +161,9 @@
                 return this.nodeType === 3 && $.trim(this.nodeValue) !== '';
             }).remove();
 
+            var removePopup = document.getElementById('goog-gt-tt');
+            removePopup.parentNode.removeChild(removePopup);
+
         }
 
         $(document).ready(function() {

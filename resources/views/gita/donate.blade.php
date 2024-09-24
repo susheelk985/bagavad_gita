@@ -12,8 +12,11 @@
                             <h2 class="mu-heading-title">Donate</h2>
                             <span class="mu-header-dot"></span>
                             <p>Your donation is to maintain this website and continues add free to use for future.</p>
-                            <img src="{{ url('storage/images/GooglePay_QR.png') }}" alt="Donate_Qr img" height="35%"
-                                width="35%">
+                            <form action="{{ route('pay-with-upi') }}" method="get">
+                                <button type="submit">Pay with UPI</button>
+                            </form>
+                            {{-- <img src="{{ url('storage/images/GooglePay_QR.png') }}" alt="Donate_Qr img" height="35%"
+                                width="35%"> --}}
                         </div>
 
 
