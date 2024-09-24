@@ -10,16 +10,17 @@ class BagavadGitaController extends Controller
     public function home()
     {
         // External api call
-        $chapters = Http::get('https://bhagavadgitaapi.in/chapters');
+        $chapters = Http::get('https://vedicscriptures.github.io/chapters');
+        // return $chapters;
         $chapters = json_decode($chapters);
-
+        // return $chapters[0];
         return view('gita_home', compact('chapters'));
     }
 
     public function chapter(Request $request, $id)
     {
         // External api call
-        $chapter = Http::get('https://bhagavadgitaapi.in/chapter/' . $id);
+        $chapter = Http::get('https://vedicscriptures.github.io/chapter/' . $id);
         //    return $chapter;
         $chapter = json_decode($chapter);
 
@@ -57,7 +58,7 @@ class BagavadGitaController extends Controller
         }
         // return $verse;
 
-        $chapter = Http::get('https://bhagavadgitaapi.in/chapter/' . $ch);
+        $chapter = Http::get('https://vedicscriptures.github.io/chapter/' . $ch);
         //    return $chapter;
         $chapter = json_decode($chapter);
         $verse_count = $chapter->verses_count;
